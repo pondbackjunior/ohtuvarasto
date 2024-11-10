@@ -41,19 +41,19 @@ class TestVarasto(unittest.TestCase):
 
     def test_konstruktori_nollataan(self):
         self.assertEqual(Varasto(-1).tilavuus, 0.0)
-    
+
     def test_saldo_nollataan(self):
         self.assertEqual(Varasto(1, -1).saldo, 0.0)
-    
+
     def test_negatiivinen_maara_palautetaan_None(self):
         self.assertEqual(self.varasto.lisaa_varastoon(-1), None)
 
     def test_maara_pienempi_kuin_mahtuu(self):
         Varasto(2).lisaa_varastoon(3)
-    
+
     def test_ota_negatiivinen_maara(self):
         self.assertAlmostEqual(self.varasto.ota_varastosta(-1), 0)
-    
+
     def test_kaikki_mita_voidaan(self):
         self.varasto.ota_varastosta(100)
 
